@@ -1,0 +1,1716 @@
+/* ================================================================
+   RYANTO RESORT — COMPLETE STYLESHEET
+   ================================================================
+   HOW TO CUSTOMIZE:
+   1. Find the "CUSTOMIZATION" sections below
+   2. Change only the values marked with arrows: ← CHANGE THIS
+   3. Save the file and refresh your browser
+   ================================================================ */
+
+/* ================================================================
+   SECTION 1: CSS VARIABLES — YOUR MAIN BRAND SETTINGS
+   Change colors, fonts, and spacing all in one place here
+   ================================================================ */
+:root {
+  /* ─── PRIMARY BRAND COLORS — CHANGE HERE ─── */
+  --gold: #C9A84C;          /* ← CHANGE: Main gold accent color */
+  --gold-light: #E8C97E;    /* ← CHANGE: Lighter gold for hover states */
+  --gold-dark: #A07A30;     /* ← CHANGE: Darker gold for active states */
+
+  /* ─── BACKGROUND COLORS — CHANGE HERE ─── */
+  --dark: #0A0A0A;          /* ← CHANGE: Primary dark background */
+  --dark-2: #111111;        /* ← CHANGE: Secondary dark background */
+  --dark-3: #181818;        /* ← CHANGE: Card dark background */
+  --dark-4: #222222;        /* ← CHANGE: Lighter dark for sections */
+
+  /* ─── TEXT COLORS — CHANGE HERE ─── */
+  --text-primary: #F5F0E8;  /* ← CHANGE: Main text color */
+  --text-secondary: #A89880;/* ← CHANGE: Muted/secondary text color */
+  --text-muted: #666666;    /* ← CHANGE: Very muted text */
+  --white: #FFFFFF;
+
+  /* ─── TYPOGRAPHY — CHANGE FONTS HERE ─── */
+  --font-display: 'Cormorant Garamond', Georgia, serif; /* ← CHANGE: Headline font */
+  --font-body: 'Jost', system-ui, sans-serif;           /* ← CHANGE: Body text font */
+
+  /* ─── FONT SIZES — CHANGE SIZE SCALE HERE ─── */
+  --fs-hero: clamp(3.5rem, 8vw, 7rem);    /* Hero headline size */
+  --fs-h2: clamp(2.2rem, 4vw, 3.5rem);    /* Section title size */
+  --fs-h3: clamp(1.3rem, 2vw, 1.6rem);    /* Card title size */
+  --fs-body: 1rem;                          /* ← CHANGE: Body text size */
+  --fs-small: 0.875rem;
+
+  /* ─── SPACING — CHANGE SECTION PADDING HERE ─── */
+  --section-pad: clamp(5rem, 10vw, 9rem); /* ← CHANGE: Vertical padding for sections */
+  --container-max: 1240px;                 /* ← CHANGE: Max content width */
+
+  /* ─── BORDER RADIUS — CHANGE ROUNDNESS HERE ─── */
+  --radius-sm: 6px;    /* ← CHANGE: Small corner radius */
+  --radius-md: 14px;   /* ← CHANGE: Card corner radius */
+  --radius-lg: 24px;   /* ← CHANGE: Large element radius */
+
+  /* ─── ANIMATION SPEED — CHANGE TRANSITION SPEED HERE ─── */
+  --transition: 0.35s ease;           /* ← CHANGE: General hover/transition speed */
+  --transition-slow: 0.7s ease;       /* ← CHANGE: Slow animation speed */
+
+  /* ─── SHADOWS ─── */
+  --shadow-card: 0 8px 40px rgba(0,0,0,0.4);
+  --shadow-gold: 0 4px 24px rgba(201,168,76,0.25);
+}
+
+/* ================================================================
+   SECTION 2: GLOBAL RESET & BASE STYLES
+   Generally you won't need to change these
+   ================================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--dark);
+  color: var(--text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ── Container ── */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+/* ── Section base ── */
+.section {
+  padding-block: var(--section-pad);
+}
+
+/* ── Dark section variant ── */
+.section-dark {
+  background-color: var(--dark-2);
+}
+
+/* ── Section header ── */
+.section-header {
+  text-align: center;
+  max-width: 660px;
+  margin-inline: auto;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+/* ─── SECTION EYEBROW LABEL — CHANGE STYLE HERE ─── */
+.section-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);        /* ← CHANGE: Eyebrow label color */
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* ─── SECTION TITLES — CHANGE STYLE HERE ─── */
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gold);  /* ← CHANGE: Italic accent color in titles */
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  font-weight: 300;
+}
+
+/* ── Desktop-only line break ── */
+.desktop-only { display: none; }
+@media (min-width: 768px) {
+  .desktop-only { display: block; }
+}
+
+/* ================================================================
+   SECTION 3: BUTTONS — CHANGE BUTTON STYLES HERE
+   ================================================================ */
+
+/* ─── PRIMARY GOLD BUTTON — CHANGE HERE ─── */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2.25rem;     /* ← CHANGE: Button padding */
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 1.5px solid transparent;
+  white-space: nowrap;
+}
+
+/* ─── GOLD FILLED BUTTON ─── */
+.btn-gold {
+  background: var(--gold);      /* ← CHANGE: Button background */
+  color: var(--dark);           /* ← CHANGE: Button text color */
+  border-color: var(--gold);
+}
+
+.btn-gold:hover {
+  background: var(--gold-light);/* ← CHANGE: Hover background */
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* ─── OUTLINE BUTTON ─── */
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);   /* ← CHANGE: Outline button text color */
+  border-color: rgba(255,255,255,0.45);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--white);
+}
+
+/* ─── WHITE OUTLINE BUTTON (for dark image overlays) ─── */
+.btn-outline-white {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.6);
+  font-size: 0.75rem;
+  padding: 0.65rem 1.5rem;
+}
+
+.btn-outline-white:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+
+.btn.full-width {
+  width: 100%;
+  text-align: center;
+}
+
+/* ================================================================
+   SECTION 4: NAVIGATION — CHANGE NAVBAR STYLE HERE
+   ================================================================ */
+
+/* ─── NAVBAR — CHANGE BACKGROUND, HEIGHT, SHADOW HERE ─── */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.25rem 0;
+  transition: all var(--transition);
+  background: transparent;
+}
+
+#navbar.scrolled {
+  background: rgba(10, 10, 10, 0.95);  /* ← CHANGE: Navbar background when scrolled */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+/* ─── NAVBAR LOGO — CHANGE HERE ─── */
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.logo-main {
+  font-family: var(--font-display);
+  font-size: 1.5rem;                /* ← CHANGE: Logo main text size */
+  font-weight: 400;
+  color: var(--gold);               /* ← CHANGE: Logo text color */
+  letter-spacing: 0.08em;
+}
+
+.logo-sub {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--text-secondary);     /* ← CHANGE: Logo subtitle color */
+}
+
+/* ─── NAVBAR LINKS — CHANGE LINK STYLE HERE ─── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 2rem);
+}
+
+.nav-links a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.8); /* ← CHANGE: Nav link color */
+  transition: color var(--transition);
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);         /* ← CHANGE: Nav underline color */
+  transition: width var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-cta {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.72rem;
+  flex-shrink: 0;
+}
+
+/* ─── HAMBURGER MENU (mobile) ─── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--text-primary); /* ← CHANGE: Hamburger line color */
+  transition: all var(--transition);
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ================================================================
+   SECTION 5: HERO — CHANGE HERO STYLES HERE
+   ================================================================ */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ─── HERO SLIDESHOW ─── */
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;  /* ← CHANGE: Slide transition speed */
+  transform: scale(1.05);
+}
+
+.hero-slide.active {
+  opacity: 1;
+  animation: heroZoom 7s ease forwards; /* ← CHANGE: Ken Burns zoom duration */
+}
+
+/* ─── KEN BURNS ZOOM EFFECT — CHANGE ZOOM INTENSITY HERE ─── */
+@keyframes heroZoom {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.0); }  /* ← CHANGE: End scale value */
+}
+
+/* ─── HERO OVERLAY GRADIENT — CHANGE DARKNESS HERE ─── */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3) 0%,        /* ← CHANGE: Top overlay darkness */
+    rgba(0,0,0,0.5) 50%,
+    rgba(0,0,0,0.75) 100%       /* ← CHANGE: Bottom overlay darkness */
+  );
+  z-index: 1;
+}
+
+/* ─── HERO CONTENT — CHANGE TEXT ALIGNMENT, POSITION HERE ─── */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 1.5rem;
+  max-width: 900px;
+}
+
+.hero-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);           /* ← CHANGE: Hero eyebrow color */
+  margin-bottom: 1rem;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: var(--fs-hero);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: var(--gold);           /* ← CHANGE: Hero italic text color */
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ─── HERO SLIDE DOTS ─── */
+.hero-dots {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.dot.active {
+  width: 24px;
+  border-radius: 3px;
+  background: var(--gold);  /* ← CHANGE: Active dot color */
+}
+
+/* ─── SCROLL INDICATOR ─── */
+.scroll-indicator {
+  position: absolute;
+  right: 2rem;
+  bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 3;
+}
+
+.scroll-indicator span {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  writing-mode: vertical-rl;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(201,168,76,0.8), transparent);
+  animation: scrollPulse 1.5s ease infinite;  /* ← CHANGE: Scroll animation speed */
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.5; transform: scaleY(0.6); }
+}
+
+/* ================================================================
+   SECTION 6: ABOUT — CHANGE LAYOUT/STYLES HERE
+   ================================================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.about-images {
+  position: relative;
+}
+
+.about-img-main {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 520px;
+}
+
+.about-img-main img {
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition-slow);
+}
+
+.about-img-main:hover img {
+  transform: scale(1.03);
+}
+
+.about-img-accent {
+  position: absolute;
+  bottom: -2rem;
+  right: -2rem;
+  width: 45%;
+  height: 220px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 4px solid var(--dark);  /* ← CHANGE: Accent image border color */
+  box-shadow: var(--shadow-card);
+}
+
+.about-img-accent img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.6);
+}
+
+.about-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+}
+
+.badge-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--gold);  /* ← CHANGE: Badge number color */
+  line-height: 1;
+}
+
+.badge-text {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+}
+
+.about-text {
+  padding-left: 1rem;
+}
+
+.about-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+
+.about-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.pillar {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.pillar i {
+  color: var(--gold);  /* ← CHANGE: Pillar icon color */
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.pillar h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+.pillar p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ================================================================
+   SECTION 7: ROOMS — CHANGE CARD STYLES HERE
+   ================================================================ */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ─── ROOM CARD — CHANGE CARD BACKGROUND, BORDER HERE ─── */
+.room-card {
+  background: var(--dark-3);            /* ← CHANGE: Card background */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.room-card:hover {
+  transform: translateY(-6px);          /* ← CHANGE: Hover lift amount */
+  box-shadow: var(--shadow-card);
+}
+
+.room-img-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.room-img-wrap img {
+  width: 100%;
+  height: 100%;
+  transition: transform var(--transition-slow);
+}
+
+.room-card:hover .room-img-wrap img {
+  transform: scale(1.05);
+}
+
+/* ─── ROOM TAGS — CHANGE BADGE COLORS HERE ─── */
+.room-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--gold);    /* ← CHANGE: Default tag background */
+  color: var(--dark);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+}
+
+.room-tag.premium {
+  background: var(--dark-4);  /* ← CHANGE: Premium tag background */
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+.room-tag.honeymoon {
+  background: #8B2A4A;        /* ← CHANGE: Honeymoon tag color */
+  color: var(--white);
+}
+
+.room-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.room-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+  color: var(--text-primary);
+}
+
+.room-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.room-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.room-features li {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.room-features li i {
+  color: var(--gold);   /* ← CHANGE: Check icon color */
+  font-size: 0.65rem;
+}
+
+.room-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.room-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-from {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.price-amount {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--gold);           /* ← CHANGE: Price color */
+}
+
+.price-night {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* ================================================================
+   SECTION 8: AMENITIES — CHANGE CARD STYLES HERE
+   ================================================================ */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ─── AMENITY CARD — GLASSMORPHISM EFFECT — CHANGE HERE ─── */
+.amenity-card {
+  background: rgba(255,255,255,0.03);    /* ← CHANGE: Card glass background */
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.amenity-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.amenity-card:hover {
+  background: rgba(201,168,76,0.06);  /* ← CHANGE: Card hover background */
+  border-color: rgba(201,168,76,0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.amenity-card:hover::before {
+  opacity: 1;
+}
+
+/* ─── AMENITY ICON — CHANGE ICON STYLE HERE ─── */
+.amenity-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(201,168,76,0.1);  /* ← CHANGE: Icon circle background */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  transition: all var(--transition);
+}
+
+.amenity-card:hover .amenity-icon {
+  background: var(--gold);
+}
+
+.amenity-icon i {
+  font-size: 1.4rem;
+  color: var(--gold);               /* ← CHANGE: Icon color */
+  transition: color var(--transition);
+}
+
+.amenity-card:hover .amenity-icon i {
+  color: var(--dark);               /* ← CHANGE: Icon hover color */
+}
+
+.amenity-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.amenity-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ================================================================
+   SECTION 9: EXPERIENCES — CHANGE CARD STYLES HERE
+   ================================================================ */
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+}
+
+.exp-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 320px;
+  cursor: pointer;
+}
+
+/* Large cards span 2 columns */
+.exp-large {
+  grid-column: span 2;
+  height: 360px;
+}
+
+.exp-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.exp-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ─── EXPERIENCE CARD OVERLAY GRADIENT — CHANGE HERE ─── */
+.exp-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.88) 0%,       /* ← CHANGE: Bottom overlay opacity */
+    rgba(0,0,0,0.1) 60%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  transition: background var(--transition);
+}
+
+.exp-card:hover .exp-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.92) 0%,
+    rgba(0,0,0,0.4) 60%,
+    rgba(0,0,0,0.1) 100%
+  );
+}
+
+.exp-content {
+  transform: translateY(1rem);
+  transition: transform var(--transition);
+}
+
+.exp-card:hover .exp-content {
+  transform: translateY(0);
+}
+
+.exp-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);          /* ← CHANGE: Experience tag color */
+  margin-bottom: 0.4rem;
+}
+
+.exp-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.exp-content p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  max-width: 400px;
+  opacity: 0;
+  transition: opacity var(--transition) 0.05s;
+}
+
+.exp-card:hover .exp-content p {
+  opacity: 1;
+}
+
+/* ================================================================
+   SECTION 10: GALLERY — CHANGE MASONRY LAYOUT HERE
+   ================================================================ */
+.gallery-masonry {
+  columns: 4;                  /* ← CHANGE: Number of columns (desktop) */
+  column-gap: 1rem;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.gallery-tall img {
+  min-height: 320px;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ─── GALLERY ITEM LABEL ─── */
+.gallery-label {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem 0.9rem;
+  opacity: 0;
+  transition: opacity var(--transition);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.gallery-item:hover .gallery-label {
+  opacity: 1;
+}
+
+/* ─── LIGHTBOX — CHANGE BACKGROUND HERE ─── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95); /* ← CHANGE: Lightbox overlay darkness */
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.lightbox-caption {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all var(--transition);
+}
+
+.lightbox-close {
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-prev { left: 1.5rem; }
+.lightbox-next { right: 1.5rem; }
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
+}
+
+/* ================================================================
+   SECTION 11: TESTIMONIALS — CHANGE STYLES HERE
+   ================================================================ */
+.testimonials-track-wrap {
+  overflow: hidden;
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 1.5rem;
+  transition: transform 0.5s ease; /* ← CHANGE: Slide speed */
+}
+
+/* ─── TESTIMONIAL CARD — CHANGE HERE ─── */
+.testimonial-card {
+  flex: 0 0 calc(33.333% - 1rem);
+  background: rgba(255,255,255,0.03);  /* ← CHANGE: Card background */
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  transition: all var(--transition);
+}
+
+@media (max-width: 900px) {
+  .testimonial-card { flex: 0 0 calc(100% - 0rem); }
+}
+
+.stars {
+  color: var(--gold);   /* ← CHANGE: Star color */
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.testi-text {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-primary);
+  line-height: 1.8;
+  margin-bottom: 1.75rem;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.testi-author img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold); /* ← CHANGE: Avatar border color */
+}
+
+.testi-author strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.testi-author span {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.testi-dots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* ================================================================
+   SECTION 12: CONTACT — CHANGE FORM/LAYOUT STYLES HERE
+   ================================================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.contact-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.contact-intro {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(201,168,76,0.1); /* ← CHANGE: Icon circle color */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon i {
+  color: var(--gold);    /* ← CHANGE: Contact icon color */
+  font-size: 0.9rem;
+}
+
+.contact-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.contact-value {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  transition: color var(--transition);
+}
+
+a.contact-value:hover {
+  color: var(--gold);
+}
+
+.contact-social {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ─── SOCIAL LINKS — CHANGE STYLE HERE ─── */
+.social-link {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.05);  /* ← CHANGE: Social button background */
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.social-link:hover {
+  background: var(--gold);        /* ← CHANGE: Social hover background */
+  border-color: var(--gold);
+  color: var(--dark);
+  transform: translateY(-3px);
+}
+
+/* ─── CONTACT FORM — CHANGE INPUT STYLES HERE ─── */
+.contact-form {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);  /* ← CHANGE: Form label color */
+}
+
+/* ─── INPUT FIELDS — CHANGE HERE ─── */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background: rgba(255,255,255,0.04);   /* ← CHANGE: Input background */
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  color: var(--text-primary);           /* ← CHANGE: Input text color */
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color var(--transition);
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);    /* ← CHANGE: Input focus border color */
+  background: rgba(201,168,76,0.04);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);     /* ← CHANGE: Placeholder text color */
+}
+
+.form-group select option {
+  background: var(--dark-3);
+  color: var(--text-primary);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ─── FORM STATUS MESSAGE ─── */
+.form-status {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.form-status.success { color: #4CAF50; }   /* ← CHANGE: Success message color */
+.form-status.error { color: #f44336; }     /* ← CHANGE: Error message color */
+
+/* ================================================================
+   SECTION 13: FOOTER — CHANGE STYLES HERE
+   ================================================================ */
+.footer {
+  background: var(--dark-2);                /* ← CHANGE: Footer background */
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 2rem;
+}
+
+.footer-brand .footer-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+
+.footer-brand p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 300px;
+}
+
+.footer-links h5,
+.footer-contact h5 {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);          /* ← CHANGE: Footer heading color */
+  margin-bottom: 1.25rem;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links ul li a {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+}
+
+.footer-links ul li a:hover {
+  color: var(--gold);
+}
+
+.footer-contact p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.6;
+}
+
+.footer-contact i {
+  color: var(--gold);
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.footer-contact a {
+  transition: color var(--transition);
+}
+
+.footer-contact a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ================================================================
+   SECTION 14: FLOATING WHATSAPP BUTTON — CHANGE STYLE HERE
+   ================================================================ */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;                        /* ← CHANGE: Position (left/right) */
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  background: #25D366;                /* ← CHANGE: WhatsApp button color */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--white);
+  box-shadow: 0 6px 24px rgba(37,211,102,0.45);
+  transition: all var(--transition);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 32px rgba(37,211,102,0.6);
+}
+
+.wa-tooltip {
+  position: absolute;
+  right: 70px;
+  background: var(--dark-3);
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.4rem 0.9rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.whatsapp-float:hover .wa-tooltip {
+  opacity: 1;
+}
+
+/* ================================================================
+   SECTION 15: BACK TO TOP BUTTON — CHANGE STYLE HERE
+   ================================================================ */
+.back-to-top {
+  position: fixed;
+  bottom: 6.5rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  background: rgba(201,168,76,0.15);  /* ← CHANGE: Back to top background */
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition);
+  z-index: 998;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+/* ================================================================
+   SECTION 16: SCROLL REVEAL ANIMATION — CHANGE HERE
+   ================================================================ */
+/* ─── Initial hidden state for reveal elements ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);         /* ← CHANGE: Slide up distance */
+  transition: opacity 0.7s ease, transform 0.7s ease; /* ← CHANGE: Reveal speed */
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children of a revealed element */
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+.reveal:nth-child(4) { transition-delay: 0.3s; }
+
+/* ================================================================
+   SECTION 17: RESPONSIVE DESIGN — MOBILE BREAKPOINTS
+   ================================================================ */
+
+/* ─── TABLET (below 1024px) ─── */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .about-text {
+    padding-left: 0;
+  }
+  .about-img-main {
+    height: 400px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .experiences-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .exp-large {
+    grid-column: span 2;
+  }
+  .gallery-masonry {
+    columns: 3;   /* ← CHANGE: Tablet column count */
+  }
+}
+
+/* ─── MOBILE (below 768px) ─── */
+@media (max-width: 768px) {
+  /* Mobile nav */
+  .hamburger { display: flex; }
+  .nav-cta { display: none; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 280px;
+    background: var(--dark-2);       /* ← CHANGE: Mobile menu background */
+    padding: 5rem 2rem 2rem;
+    gap: 1.5rem;
+    box-shadow: -5px 0 30px rgba(0,0,0,0.5);
+    z-index: 999;
+    overflow-y: auto;
+    transition: transform var(--transition);
+    transform: translateX(100%);
+  }
+
+  .nav-links.open {
+    display: flex;
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  /* Stacked room cards */
+  .rooms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stacked experiences */
+  .experiences-grid {
+    grid-template-columns: 1fr;
+  }
+  .exp-large {
+    grid-column: span 1;
+  }
+
+  /* Gallery: 2 columns on mobile */
+  .gallery-masonry {
+    columns: 2;   /* ← CHANGE: Mobile column count */
+  }
+
+  /* About images adjustment */
+  .about-img-main {
+    height: 300px;
+  }
+  .about-img-accent {
+    display: none;
+  }
+
+  /* Pillars stacked */
+  .about-pillars {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Form row stacked */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact form padding */
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  /* Footer stacked */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* Scroll indicator hidden on mobile */
+  .scroll-indicator {
+    display: none;
+  }
+
+  /* Hero buttons stacked */
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    flex: 0 0 100%;
+  }
+}
+
+/* ─── SMALL MOBILE (below 480px) ─── */
+@media (max-width: 480px) {
+  .gallery-masonry {
+    columns: 1;   /* ← CHANGE: Small mobile column count */
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
+}
+
+/* ================================================================
+   SECTION 18: ACCESSIBILITY & REDUCED MOTION
+   ================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold);   /* ← CHANGE: Focus outline color */
+  outline-offset: 3px;
+}

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== SEO META TAGS — CHANGE RESORT NAME, DESCRIPTION & KEYWORDS HERE ===== -->
+  <title>Ryanto Resort — Escape Into Luxury</title>
+  <meta name="description" content="Ryanto Resort offers world-class luxury staycations, honeymoon packages, family holidays, and corporate retreats in a tropical paradise." />
+  <meta name="keywords" content="Ryanto Resort, luxury resort, staycation, honeymoon, family holiday, Maldives-style resort, infinity pool, spa" />
+  <meta name="author" content="Ryanto Resort" />
+
+  <!-- Open Graph for social sharing -->
+  <meta property="og:title" content="Ryanto Resort — Escape Into Luxury" />
+  <meta property="og:description" content="Experience unforgettable staycations, family vacations, and romantic getaways." />
+  <meta property="og:type" content="website" />
+  <!-- CHANGE: Replace with your actual deployed URL -->
+  <meta property="og:url" content="https://ryantoresort.com" />
+
+  <!-- ===== GOOGLE FONTS — CHANGE FONTS HERE ===== -->
+  <!-- Display: Cormorant Garamond (elegant luxury serif) | Body: Jost (clean geometric sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       STICKY NAVIGATION
+       CHANGE: Logo text, menu links, phone number
+  ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <!-- CHANGE LOGO TEXT HERE -->
+      <a href="#home" class="nav-logo">
+        <span class="logo-main">Ryanto</span>
+        <span class="logo-sub">Resort</span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#rooms">Rooms</a></li>
+        <li><a href="#experiences">Experiences</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#amenities">Amenities</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- CHANGE: This links to your booking section or external booking URL -->
+      <a href="#rooms" class="btn btn-gold nav-cta">Book Now</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+       CHANGE: Headline, subheadline, button text
+       CHANGE IMAGES: Replace Unsplash URLs with your own resort photos
+  ============================================================ -->
+  <section id="home" class="hero">
+
+    <!-- Hero background slides — CHANGE IMAGE URLs HERE -->
+    <div class="hero-slides">
+      <!-- SLIDE 1: Luxury resort front view -->
+      <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=1920&q=85');"></div>
+      <!-- SLIDE 2: Overwater villa / resort view -->
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1540541338537-71acded26cdf?w=1920&q=85');"></div>
+      <!-- SLIDE 3: Sunset resort view -->
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1920&q=85');"></div>
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content reveal">
+      <!-- CHANGE: Main headline -->
+      <p class="hero-eyebrow">Welcome to Ryanto Resort</p>
+      <h1 class="hero-headline">Escape Into<br /><em>Luxury</em></h1>
+      <!-- CHANGE: Subheadline -->
+      <p class="hero-sub">Experience unforgettable staycations, family vacations,<br class="desktop-only" /> and romantic getaways in our tropical paradise.</p>
+      <div class="hero-buttons">
+        <a href="#rooms" class="btn btn-gold">Book Your Stay</a>
+        <a href="#about" class="btn btn-outline">Explore Resort</a>
+      </div>
+    </div>
+
+    <!-- Slide dots -->
+    <div class="hero-dots">
+      <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+      <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+      <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+       CHANGE: All text content below
+  ============================================================ -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images reveal">
+          <!-- CHANGE IMAGE: About section left image — resort entrance or lobby -->
+          <div class="about-img-main">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=85"
+                 alt="Ryanto Resort Entrance" loading="lazy" />
+          </div>
+          <!-- CHANGE IMAGE: About section small accent image -->
+          <div class="about-img-accent">
+            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&q=85"
+                 alt="Ryanto Resort Pool" loading="lazy" />
+            <div class="about-badge">
+              <span class="badge-number">8+</span>
+              <span class="badge-text">Years of<br/>Excellence</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text reveal">
+          <!-- CHANGE: Section label -->
+          <p class="section-eyebrow">Our Story</p>
+          <!-- CHANGE: About headline -->
+          <h2 class="section-title">A Sanctuary Where<br /><em>Nature Meets Luxury</em></h2>
+          <!-- CHANGE: About paragraphs -->
+          <p class="about-desc">Nestled in the heart of a pristine tropical landscape, Ryanto Resort is more than a destination — it is a feeling. We have crafted every corner with one purpose: to give you the rare gift of complete stillness, surrounded by beauty.</p>
+          <p class="about-desc">From the moment you arrive, our dedicated team ensures every detail is attended to. Whether you seek the serenity of our spa, the thrill of adventure, or the warmth of candlelit dining under the stars — Ryanto delivers it all with quiet, effortless grace.</p>
+
+          <div class="about-pillars">
+            <!-- CHANGE: Pillar icons, titles, descriptions -->
+            <div class="pillar">
+              <i class="fas fa-leaf"></i>
+              <div>
+                <h4>Nature</h4>
+                <p>Surrounded by lush tropical gardens and pristine waters</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <i class="fas fa-spa"></i>
+              <div>
+                <h4>Wellness</h4>
+                <p>Holistic spa treatments inspired by ancient traditions</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <i class="fas fa-lock"></i>
+              <div>
+                <h4>Privacy</h4>
+                <p>Exclusive villas designed for complete seclusion</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <i class="fas fa-star"></i>
+              <div>
+                <h4>Luxury</h4>
+                <p>Meticulous attention to comfort and refinement</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ROOMS SECTION
+       CHANGE: Room names, prices, features, images, booking links
+  ============================================================ -->
+  <section id="rooms" class="rooms section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Accommodations</p>
+        <h2 class="section-title">Your Perfect<br /><em>Private Retreat</em></h2>
+        <p class="section-subtitle">Each room is a carefully designed sanctuary, blending local craftsmanship with contemporary luxury.</p>
+      </div>
+
+      <div class="rooms-grid">
+
+        <!-- ROOM CARD 1 — CHANGE: Name, price, features, image, booking link -->
+        <div class="room-card reveal">
+          <div class="room-img-wrap">
+            <!-- CHANGE IMAGE: Deluxe Room interior photo -->
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=700&q=85"
+                 alt="Deluxe Room" loading="lazy" />
+            <div class="room-tag">Most Popular</div>
+          </div>
+          <div class="room-body">
+            <!-- CHANGE: Room name -->
+            <h3>Deluxe Room</h3>
+            <p class="room-desc">Elegant comfort with garden views and handcrafted furnishings, perfect for couples or solo travelers seeking refined simplicity.</p>
+            <ul class="room-features">
+              <!-- CHANGE: Room features list -->
+              <li><i class="fas fa-check"></i> King-sized bed</li>
+              <li><i class="fas fa-check"></i> Garden view balcony</li>
+              <li><i class="fas fa-check"></i> Luxury rain shower</li>
+              <li><i class="fas fa-check"></i> Smart TV & WiFi</li>
+            </ul>
+            <div class="room-footer">
+              <!-- CHANGE: Room price -->
+              <div class="room-price">
+                <span class="price-from">From</span>
+                <span class="price-amount">₹6,999</span>
+                <span class="price-night">/ night</span>
+              </div>
+              <!-- CHANGE: Booking link — replace # with WhatsApp, email, or booking page -->
+              <a href="https://wa.me/917306880738?text=Hello%20Ryanto%20Resort,%20I%20would%20like%20to%20book%20a%20Deluxe%20Room." class="btn btn-gold" target="_blank">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROOM CARD 2 — CHANGE: Name, price, features, image, booking link -->
+        <div class="room-card reveal">
+          <div class="room-img-wrap">
+            <!-- CHANGE IMAGE: Premium Suite interior -->
+            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=700&q=85"
+                 alt="Premium Suite" loading="lazy" />
+            <div class="room-tag premium">Premium</div>
+          </div>
+          <div class="room-body">
+            <h3>Premium Suite</h3>
+            <p class="room-desc">Expansive living spaces with a separate lounge, ocean-inspired decor, and butler service on request.</p>
+            <ul class="room-features">
+              <li><i class="fas fa-check"></i> Separate living lounge</li>
+              <li><i class="fas fa-check"></i> Ocean-view terrace</li>
+              <li><i class="fas fa-check"></i> Clawfoot soaking tub</li>
+              <li><i class="fas fa-check"></i> Butler service</li>
+            </ul>
+            <div class="room-footer">
+              <!-- CHANGE: Room price -->
+              <div class="room-price">
+                <span class="price-from">From</span>
+                <span class="price-amount">₹12,999</span>
+                <span class="price-night">/ night</span>
+              </div>
+              <a href="https://wa.me/917306880738?text=Hello%20Ryanto%20Resort,%20I%20would%20like%20to%20book%20a%20Premium%20Suite." class="btn btn-gold" target="_blank">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROOM CARD 3 — Family Villa -->
+        <div class="room-card reveal">
+          <div class="room-img-wrap">
+            <!-- CHANGE IMAGE: Family Suite interior -->
+            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=700&q=85"
+                 alt="Family Villa" loading="lazy" />
+          </div>
+          <div class="room-body">
+            <h3>Family Villa</h3>
+            <p class="room-desc">Three bedrooms, a private garden, and dedicated kids' play space — designed to bring families together in joyful comfort.</p>
+            <ul class="room-features">
+              <li><i class="fas fa-check"></i> 3 bedrooms</li>
+              <li><i class="fas fa-check"></i> Private garden</li>
+              <li><i class="fas fa-check"></i> Kids' play area</li>
+              <li><i class="fas fa-check"></i> Full kitchen</li>
+            </ul>
+            <div class="room-footer">
+              <!-- CHANGE: Room price -->
+              <div class="room-price">
+                <span class="price-from">From</span>
+                <span class="price-amount">₹18,999</span>
+                <span class="price-night">/ night</span>
+              </div>
+              <a href="https://wa.me/917306880738?text=Hello%20Ryanto%20Resort,%20I%20would%20like%20to%20book%20the%20Family%20Villa." class="btn btn-gold" target="_blank">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROOM CARD 4 — Private Pool Villa / Honeymoon -->
+        <div class="room-card reveal">
+          <div class="room-img-wrap">
+            <!-- CHANGE IMAGE: Honeymoon / Pool Villa with balcony or pool -->
+            <img src="https://images.unsplash.com/photo-1596436889106-be35e843f974?w=700&q=85"
+                 alt="Private Pool Villa" loading="lazy" />
+            <div class="room-tag honeymoon">Honeymoon</div>
+          </div>
+          <div class="room-body">
+            <h3>Private Pool Villa</h3>
+            <p class="room-desc">Your own infinity plunge pool, open-air bathroom, and a romantic canopy bed — designed for lovers who deserve the extraordinary.</p>
+            <ul class="room-features">
+              <li><i class="fas fa-check"></i> Private infinity pool</li>
+              <li><i class="fas fa-check"></i> Open-air bathroom</li>
+              <li><i class="fas fa-check"></i> Canopy king bed</li>
+              <li><i class="fas fa-check"></i> Champagne on arrival</li>
+            </ul>
+            <div class="room-footer">
+              <!-- CHANGE: Room price -->
+              <div class="room-price">
+                <span class="price-from">From</span>
+                <span class="price-amount">₹28,999</span>
+                <span class="price-night">/ night</span>
+              </div>
+              <a href="https://wa.me/917306880738?text=Hello%20Ryanto%20Resort,%20I%20would%20like%20to%20book%20the%20Private%20Pool%20Villa." class="btn btn-gold" target="_blank">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AMENITIES SECTION
+       CHANGE: Icons, titles, descriptions below
+  ============================================================ -->
+  <section id="amenities" class="amenities section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Resort Facilities</p>
+        <h2 class="section-title">Everything You<br /><em>Could Desire</em></h2>
+      </div>
+
+      <div class="amenities-grid">
+        <!-- CHANGE: Each amenity — icon (Font Awesome class), title, description -->
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-swimming-pool"></i></div>
+          <h4>Infinity Pool</h4>
+          <p>A seamless horizon pool overlooking the tropical canopy, open sunrise to midnight.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-spa"></i></div>
+          <h4>Luxury Spa</h4>
+          <p>Ancient healing rituals, aromatherapy, and bespoke treatments in a serene sanctuary.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-utensils"></i></div>
+          <h4>Fine Dining</h4>
+          <p>Farm-to-table cuisine, live cooking stations, and private candlelit dinner experiences.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-car"></i></div>
+          <h4>Private Parking</h4>
+          <p>Dedicated covered parking with valet service available around the clock.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-wifi"></i></div>
+          <h4>High-Speed WiFi</h4>
+          <p>Fibre-optic connectivity throughout the resort, including villas and pool decks.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-plane-departure"></i></div>
+          <h4>Airport Pickup</h4>
+          <p>Seamless luxury transfers in air-conditioned vehicles — complimentary on select packages.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-fire"></i></div>
+          <h4>Bonfire Area</h4>
+          <p>Gather under a canopy of stars around our signature beachside bonfire each evening.</p>
+        </div>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon"><i class="fas fa-hiking"></i></div>
+          <h4>Adventure Activities</h4>
+          <p>Kayaking, nature trails, rock climbing, and guided expeditions for the adventurous soul.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXPERIENCES SECTION
+       CHANGE: Experience titles, descriptions, images, CTA links
+  ============================================================ -->
+  <section id="experiences" class="experiences section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Curated Packages</p>
+        <h2 class="section-title">Unforgettable<br /><em>Experiences</em></h2>
+        <p class="section-subtitle">Every visit is a story written in your own words. Choose the chapter that calls to you.</p>
+      </div>
+
+      <div class="experiences-grid">
+
+        <!-- EXPERIENCE 1 — CHANGE: Image, title, description, link -->
+        <div class="exp-card exp-large reveal">
+          <!-- CHANGE IMAGE: Infinity pool or staycation scene -->
+          <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=85"
+               alt="Luxury Staycation" loading="lazy" />
+          <div class="exp-overlay">
+            <div class="exp-content">
+              <p class="exp-tag">Most Loved</p>
+              <h3>Luxury Staycations</h3>
+              <p>Reset completely. Our all-inclusive staycation package wraps pool access, spa credits, and gourmet meals into one perfect escape.</p>
+              <!-- CHANGE: Booking link -->
+              <a href="https://wa.me/917306880738?text=Hello%20Ryanto%20Resort,%20I%20am%20interested%20in%20the%20Staycation%20Package." class="btn btn-outline-white" target="_blank">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 2 -->
+        <div class="exp-card reveal">
+          <!-- CHANGE IMAGE: Romantic/honeymoon dining or candles -->
+          <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=700&q=85"
+               alt="Honeymoon Package" loading="lazy" />
+          <div class="exp-overlay">
+            <div class="exp-content">
+              <p class="exp-tag">Romance</p>
+              <h3>Honeymoon Packages</h3>
+              <p>Private pool villa, couples' spa, sunset cruise, and a private chef dinner — crafted for two.</p>
+              <a href="https://wa.me/917306880738?text=Hello%20Ryanto%20Resort,%20I%20am%20interested%20in%20the%20Honeymoon%20Package." class="btn btn-outline-white" target="_blank">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 3 -->
+        <div class="exp-card reveal">
+          <!-- CHANGE IMAGE: Family at resort pool or beach -->
+          <img src="https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=700&q=85"
+               alt="Family Holidays" loading="lazy" />
+          <div class="exp-overlay">
+            <div class="exp-content">
+              <p class="exp-tag">Families</p>
+              <h3>Family Holidays</h3>
+              <p>From kids' activity camps to family bonfire evenings, create memories that last generations.</p>
+              <a href="https://wa.me/917306880738?text=Hello%20Ryanto%20Resort,%20I%20am%20interested%20in%20the%20Family%20Holiday%20Package." class="btn btn-outline-white" target="_blank">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 4 -->
+        <div class="exp-card reveal">
+          <!-- CHANGE IMAGE: Weekend escape / bonfire / beachfront -->
+          <img src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?w=700&q=85"
+               alt="Weekend Escapes" loading="lazy" />
+          <div class="exp-overlay">
+            <div class="exp-content">
+              <p class="exp-tag">Quick Getaway</p>
+              <h3>Weekend Escapes</h3>
+              <p>Two nights of pure indulgence — pool days, beachside bonfires, and late checkout included.</p>
+              <a href="https://wa.me/917306880738?text=Hello%20Ryanto%20Resort,%20I%20am%20interested%20in%20the%20Weekend%20Escape%20Package." class="btn btn-outline-white" target="_blank">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE 5 -->
+        <div class="exp-card exp-large reveal">
+          <!-- CHANGE IMAGE: Corporate retreat / meeting room or scenic boardwalk -->
+          <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=900&q=85"
+               alt="Corporate Retreats" loading="lazy" />
+          <div class="exp-overlay">
+            <div class="exp-content">
+              <p class="exp-tag">Business</p>
+              <h3>Corporate Retreats</h3>
+              <p>Inspire your team in paradise. Conference facilities, team-building adventures, and bespoke F&B packages available.</p>
+              <a href="https://wa.me/917306880738?text=Hello%20Ryanto%20Resort,%20I%20am%20interested%20in%20a%20Corporate%20Retreat." class="btn btn-outline-white" target="_blank">Enquire Now</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALLERY SECTION
+       CHANGE: All image URLs and alt texts below
+  ============================================================ -->
+  <section id="gallery" class="gallery section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Photo Gallery</p>
+        <h2 class="section-title">See Ryanto<br /><em>Through Our Lens</em></h2>
+      </div>
+
+      <div class="gallery-masonry">
+        <!-- CHANGE IMAGES: Replace each URL with your actual resort photos -->
+
+        <!-- Resort front elevation -->
+        <div class="gallery-item reveal" data-category="exterior">
+          <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=600&q=85"
+               alt="Ryanto Resort Front Elevation" loading="lazy" />
+          <div class="gallery-label">Resort Entrance</div>
+        </div>
+
+        <!-- Swimming Pool -->
+        <div class="gallery-item gallery-tall reveal" data-category="pool">
+          <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=600&q=85"
+               alt="Infinity Pool" loading="lazy" />
+          <div class="gallery-label">Infinity Pool</div>
+        </div>
+
+        <!-- Bedroom interior -->
+        <div class="gallery-item reveal" data-category="rooms">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=85"
+               alt="Luxury Bedroom" loading="lazy" />
+          <div class="gallery-label">Bedroom Interior</div>
+        </div>
+
+        <!-- Bathroom interior -->
+        <div class="gallery-item reveal" data-category="rooms">
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=85"
+               alt="Luxury Bathroom" loading="lazy" />
+          <div class="gallery-label">Bathroom Suite</div>
+        </div>
+
+        <!-- Balcony view — tall -->
+        <div class="gallery-item gallery-tall reveal" data-category="rooms">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=85"
+               alt="Balcony View" loading="lazy" />
+          <div class="gallery-label">Balcony View</div>
+        </div>
+
+        <!-- Dining area -->
+        <div class="gallery-item reveal" data-category="dining">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=85"
+               alt="Fine Dining" loading="lazy" />
+          <div class="gallery-label">Fine Dining</div>
+        </div>
+
+        <!-- Reception area -->
+        <div class="gallery-item reveal" data-category="interior">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=85"
+               alt="Resort Lobby" loading="lazy" />
+          <div class="gallery-label">Lobby & Reception</div>
+        </div>
+
+        <!-- Garden landscape -->
+        <div class="gallery-item reveal" data-category="exterior">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=85"
+               alt="Tropical Gardens" loading="lazy" />
+          <div class="gallery-label">Tropical Gardens</div>
+        </div>
+
+        <!-- Spa treatment -->
+        <div class="gallery-item reveal" data-category="spa">
+          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=85"
+               alt="Luxury Spa" loading="lazy" />
+          <div class="gallery-label">Spa & Wellness</div>
+        </div>
+
+        <!-- Night lighting / bonfire -->
+        <div class="gallery-item gallery-tall reveal" data-category="exterior">
+          <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=600&q=85"
+               alt="Night Resort View" loading="lazy" />
+          <div class="gallery-label">Bonfire Nights</div>
+        </div>
+
+        <!-- Resort back view / pool deck -->
+        <div class="gallery-item reveal" data-category="pool">
+          <img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=600&q=85"
+               alt="Pool Deck" loading="lazy" />
+          <div class="gallery-label">Pool Deck</div>
+        </div>
+
+        <!-- Adventure / outdoor -->
+        <div class="gallery-item reveal" data-category="activities">
+          <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&q=85"
+               alt="Adventure Activities" loading="lazy" />
+          <div class="gallery-label">Adventures</div>
+        </div>
+
+      </div>
+
+      <!-- Lightbox overlay — do not edit this structure -->
+      <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8249;</button>
+        <img src="" alt="" id="lightboxImg" />
+        <p id="lightboxCaption" class="lightbox-caption"></p>
+        <button class="lightbox-next" id="lightboxNext" aria-label="Next">&#8250;</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS SECTION
+       CHANGE: Guest names, locations, reviews, star ratings
+  ============================================================ -->
+  <section class="testimonials section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Guest Stories</p>
+        <h2 class="section-title">Words From Our<br /><em>Cherished Guests</em></h2>
+      </div>
+
+      <div class="testimonials-track-wrap">
+        <div class="testimonials-track" id="testimonialTrack">
+
+          <!-- CHANGE: Guest photo, name, location, review, stars -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"From the moment we arrived, every single detail exceeded our expectations. The Private Pool Villa was absolutely breathtaking. This was without doubt the most memorable trip of our lives."</p>
+            <div class="testi-author">
+              <!-- CHANGE IMAGE: Guest avatar or keep placeholder -->
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya S." loading="lazy" />
+              <div>
+                <strong>Priya S.</strong>
+                <span>Mumbai, Maharashtra</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"We booked the honeymoon package and it was pure magic. The candlelit dinner, the spa session, the staff who remembered our names — Ryanto Resort understands what luxury truly means."</p>
+            <div class="testi-author">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Arjun K." loading="lazy" />
+              <div>
+                <strong>Arjun & Deepa K.</strong>
+                <span>Bangalore, Karnataka</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"As a family of five, we were worried about finding a resort that works for all ages. The Family Villa and kids' activities made this our best vacation yet. We're already planning our return."</p>
+            <div class="testi-author">
+              <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Vikram R." loading="lazy" />
+              <div>
+                <strong>Vikram R.</strong>
+                <span>Chennai, Tamil Nadu</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"The infinity pool at sunset is something I will carry with me forever. And the spa — heavenly. Ryanto Resort is not just a hotel; it is a complete transformation. Worth every rupee."</p>
+            <div class="testi-author">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anjali M." loading="lazy" />
+              <div>
+                <strong>Anjali M.</strong>
+                <span>Hyderabad, Telangana</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testi-text">"We organized our company retreat at Ryanto Resort and the team was outstanding. Everything from the conference setup to the bonfire dinner was handled flawlessly. Highly recommend for corporate groups."</p>
+            <div class="testi-author">
+              <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Rajan P." loading="lazy" />
+              <div>
+                <strong>Rajan P.</strong>
+                <span>Coimbatore, Tamil Nadu</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Testimonial navigation dots — auto-generated by JS -->
+      <div class="testi-dots" id="testiDots"></div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+       CHANGE: Phone, email, WhatsApp, address, map embed
+  ============================================================ -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-title">Begin Your<br /><em>Journey Here</em></h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <h3>Reservations & Enquiries</h3>
+          <p class="contact-intro">Our concierge team is available every day to help you plan the perfect escape. Reach us via any of the channels below.</p>
+
+          <div class="contact-items">
+            <!-- CHANGE: Phone number -->
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <p class="contact-label">Call Us</p>
+                <!-- CHANGE: Replace phone number -->
+                <a href="tel:+917306880738" class="contact-value">+91 7306 880 738</a>
+              </div>
+            </div>
+
+            <!-- CHANGE: WhatsApp number -->
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+              <div>
+                <p class="contact-label">WhatsApp</p>
+                <!-- CHANGE: WhatsApp link and number display -->
+                <a href="https://wa.me/917306880738?text=Hello%20Ryanto%20Resort,%20I%20would%20like%20to%20make%20an%20enquiry." class="contact-value" target="_blank">+91 7306 880 738</a>
+              </div>
+            </div>
+
+            <!-- CHANGE: Email address -->
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <p class="contact-label">Email</p>
+                <!-- CHANGE: Replace email -->
+                <a href="mailto:booking@ryantoresort.com" class="contact-value">booking@ryantoresort.com</a>
+              </div>
+            </div>
+
+            <!-- CHANGE: Resort address -->
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <p class="contact-label">Location</p>
+                <!-- CHANGE: Replace with your actual resort address -->
+                <p class="contact-value">Ryanto Resort, Coastal Highway,<br />Kerala 682001, India</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-social">
+            <!-- CHANGE: Social media links -->
+            <a href="#" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="YouTube" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/917306880738" aria-label="WhatsApp" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM — CHANGE: Form field labels, placeholder texts -->
+        <div class="contact-form-wrap reveal">
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <!-- CHANGE: Placeholder text -->
+                <input type="text" id="name" name="name" placeholder="Your full name" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="checkin">Check-in Date</label>
+                <input type="date" id="checkin" name="checkin" />
+              </div>
+              <div class="form-group">
+                <label for="checkout">Check-out Date</label>
+                <input type="date" id="checkout" name="checkout" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="roomtype">Room Type</label>
+              <select id="roomtype" name="roomtype">
+                <!-- CHANGE: Room options to match your room names -->
+                <option value="">Select a room type</option>
+                <option value="deluxe">Deluxe Room</option>
+                <option value="premium">Premium Suite</option>
+                <option value="family">Family Villa</option>
+                <option value="pool-villa">Private Pool Villa</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Special Requests</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about any special occasions, dietary needs, or preferences…"></textarea>
+            </div>
+            <!-- CHANGE: Button text -->
+            <button type="submit" class="btn btn-gold full-width">Send Enquiry</button>
+            <!-- Success / error message shown by JS -->
+            <p class="form-status" id="formStatus"></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       CHANGE: Logo, tagline, links, copyright text
+  ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <!-- CHANGE: Footer logo and tagline -->
+          <div class="footer-logo">
+            <span class="logo-main">Ryanto</span>
+            <span class="logo-sub">Resort</span>
+          </div>
+          <p>A sanctuary where every moment is crafted for your pleasure. Luxury, nature, and privacy — all in one place.</p>
+          <div class="contact-social" style="margin-top:1.5rem;">
+            <!-- CHANGE: Social links -->
+            <a href="#" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="YouTube" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/917306880738" aria-label="WhatsApp" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h5>Experiences</h5>
+          <ul>
+            <li><a href="#experiences">Luxury Staycations</a></li>
+            <li><a href="#experiences">Honeymoon Packages</a></li>
+            <li><a href="#experiences">Family Holidays</a></li>
+            <li><a href="#experiences">Weekend Escapes</a></li>
+            <li><a href="#experiences">Corporate Retreats</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h5>Contact</h5>
+          <!-- CHANGE: Footer contact details -->
+          <p><i class="fas fa-phone-alt"></i> <a href="tel:+917306880738">+91 7306 880 738</a></p>
+          <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/917306880738" target="_blank">WhatsApp Us</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:booking@ryantoresort.com">booking@ryantoresort.com</a></p>
+          <!-- CHANGE: Address -->
+          <p><i class="fas fa-map-marker-alt"></i> Coastal Highway, Kerala 682001</p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <!-- CHANGE: Copyright year and resort name -->
+        <p>&copy; 2025 Ryanto Resort. All Rights Reserved.</p>
+        <p>Designed with <i class="fas fa-heart" style="color:var(--gold)"></i> for luxury seekers.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       FLOATING WHATSAPP BUTTON
+       CHANGE: WhatsApp link and pre-filled message below
+  ============================================================ -->
+  <!-- CHANGE: Replace phone number and message text in the URL -->
+  <a href="https://wa.me/917306880738?text=Hello%20Ryanto%20Resort,%20I%20would%20like%20to%20book%20a%20stay."
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="wa-tooltip">Book via WhatsApp</span>
+  </a>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
